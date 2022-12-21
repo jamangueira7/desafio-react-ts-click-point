@@ -8,14 +8,10 @@
 <br>
 
 <p align="center">
-  <img alt="gostack" src=".github/front.PNG" width="100%">
+  <img alt="gostack" src=".github/img.png" width="100%">
 </p>
 
-<p align="center">
-  <img alt="gostack" src=".github/front2.PNG" width="100%">
-</p>
-
-## JSHunt
+## Click Point React TypeScript
 
 ## 🚀 Tecnologias
 
@@ -27,16 +23,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 
 ## 💻 Projeto
+Esse projeto é um desafio em React com TypeScript onde é preciso fazer uma aplicação em que cada clique gere um circulo na posição exata onde foi clicado. Com um botão de "desfazer" que faz sumir o ultimo circulo e outro para "refazer" voltando o circulo que foi apagado.
 
-Projeto em React para consumir a [API](https://github.com/jamangueira7/node-rocketseat).
-
-Esse projeto lista alguns repositorios do Github previamente cadastrados.
+Projeto do canal [Front Beginners](https://www.youtube.com/watch?v=dOsBtM2U018).
 
 ## 🚀 Como Rodar
 
 - Clone o projeto.
-- Entre na pasta do projeto e rode yarn install (pode usar npm install de acordo com a sua configuração).
-- yarn start para rodar o font (localhost:3000).
+- Entre na pasta do projeto e rode npm install (pode usar yarn install de acordo com a sua configuração).
+- npm run dev para rodar o font (localhost:3000).
 
 ## 🤔 Como contribuir
 

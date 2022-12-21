@@ -50,7 +50,7 @@ function App() {
         disabled={undoPoints.length === 0}
         onClick={handleRedo}
       >
-        Recuperar
+        Refazer
       </button>
 
       <div className="App" onClick={getClickPoints}>
