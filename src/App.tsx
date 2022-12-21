@@ -7,25 +7,34 @@ interface ClickedProps {
 }
 
 function App() {
-  const [clickedPoints, setClickedPoint] = useState<ClickedProps[]>([]);
+  const [clickedPoints, setClickedPoints] = useState<ClickedProps[]>([]);
   const [undoPoints, setUndoPoints] = useState<ClickedProps[]>([]);
 
   function getClickPoints(event: React.MouseEvent<HTMLElement>) {
       const { clientX, clientY } = event;
 
-      setClickedPoint([...clickedPoints, { clientX, clientY }]);
+    setClickedPoints([...clickedPoints, { clientX, clientY }]);
   }
 
   function handleUndo() {
     const newClickedPoint = [...clickedPoints];
-    newClickedPoint.pop();
-    setClickedPoint(newClickedPoint);
+    const undoPoint = newClickedPoint.pop();
+    if (!undoPoint) {
+      return;
+    }
+    console.log(newClickedPoint)
+    setClickedPoints(newClickedPoint);
+    setUndoPoints([...undoPoints, undoPoint]);
   }
 
   function handleRedo() {
-    const newClickedPoint = [...clickedPoints];
-    newClickedPoint.pop();
-    setClickedPoint(newClickedPoint);
+    const newUndoPoints = [...undoPoints];
+    const redoPoint = newUndoPoints.pop();
+    if (!redoPoint) {
+      return;
+    }
+    setUndoPoints(newUndoPoints);
+    setClickedPoints([...clickedPoints, redoPoint]);
   }
 
   return (
@@ -38,7 +47,7 @@ function App() {
       </button>
 
       <button
-        disabled={clickedPoints.length === 0}
+        disabled={undoPoints.length === 0}
         onClick={handleRedo}
       >
         Recuperar
